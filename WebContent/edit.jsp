@@ -11,24 +11,32 @@
     </head>
     <body>
         <div class="main-contents">
+            <div class="header">
+                <a href="./">ホーム</a>
+            </div>
 
             <c:if test="${ not empty errorMessages }">
                 <div class="errorMessages">
                     <ul>
                         <c:forEach items="${errorMessages}" var="errorMessage">
-                            <li><c:out value="${errorMessage}" />
+                            <li><c:out value="${errorMessage}" /></li>
                         </c:forEach>
                     </ul>
                 </div>
             </c:if>
 
-            <form action="edit" method="post"><br />
-                <label for="text">つぶやき</label>
-                <input name="message_id" value="${message.id}" id="message_id" type="hidden"/>
-                <textarea name="text" cols="100" rows="5" class="tweet-box"><c:out value="${message.text}" /></textarea> <br />
-                <input type="submit" value="更新" /> <br />
-                <a href="./">戻る</a>
-            </form>
+            <div class="form-area">
+                <form action="edit" method="post">
+                    <div class="form-group">
+                        <label for="text">つぶやきを編集</label><br />
+                        <textarea name="text" cols="100" rows="5" class="tweet-box"><c:out value="${message.text}" /></textarea>
+                        <input name="message_id" value="${message.id}" id="message_id" type="hidden"/>
+                        <br />
+                        <input type="submit" value="更新" class="button">
+                        <a href="./"class="button secondary">戻る</a>
+                    </div>
+                </form>
+            </div>
 
             <div class="copyright"> Copyright(c)NishimuraYoshiki</div>
         </div>

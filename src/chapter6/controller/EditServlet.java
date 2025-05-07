@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.StringUtils;
 
 import chapter6.beans.Message;
+import chapter6.beans.User;
 import chapter6.exception.NoRowsUpdatedRuntimeException;
 import chapter6.logging.InitApplication;
 import chapter6.service.MessageService;
@@ -54,7 +55,8 @@ public class EditServlet  extends HttpServlet {
 			message = new MessageService().select(messageId);
 		}
 
-		if(message == null) {
+		User user = (User) session.getAttribute("loginUser");
+		if(message == null || user.getId() != message.getUserId()) {
 			session.setAttribute("errorMessages", "不正なパラメータが入力されました");
 			response.sendRedirect("./");
 			return;

@@ -1,153 +1,289 @@
 body {
-	background-color: #E3FFFF;
-}
-
-.main-contents {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-right: 20px;
-	background-color: pink;
-	height: 100%;
-	width: 100%;
-}
-
-.tweet-box {
-	width: 100%;
-	height: 56px;
+    background-color: #f8f8f8; /* 明るいグレーに変更 */
+    font-family: sans-serif; /* シンプルなフォントに変更 */
+    margin: 0; /* デフォルトのmarginをリセット */
+    padding: 0; /* デフォルトのpaddingをリセット */
+    line-height: 1.6; /* 行間を少し広げて読みやすく */
 }
 
 .header {
-	text-align: leght;
+    background-color: #fff; /* ヘッダーの背景を白に */
+    padding: 1em 2em; /* 上下左右に余白を追加 */
+    border-bottom: 1px solid #eee; /* 薄いグレーのボーダーを下に追加 */
+    /* display: flex;  <- この行を削除します */
+    /* justify-content: space-between; <- この行を削除します */
+    align-items: center; /* 縦方向の中央揃え */
+}
+
+.header a {
+    color: #333; /* リンクの文字色を濃いグレーに */
+    text-decoration: none; /* 下線を削除 */
+    margin-right: 1em; /* リンク間に余白を追加 */
+}
+
+.header a:hover {
+    color: #007bff; /* ホバー時のリンクの色を変更（例：青） */
+}
+
+/* ヘッダー内のログイン・登録リンクを横並びにするためのスタイル */
+.header > div {
+    display: flex;
+    align-items: center;
+}
+
+.header > div a {
+    margin-left: 1em;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+}
+
+.header-links a {
+  margin-right: 1em;
+}
+
+.comment-form {
+  padding: 0.5em;
+  margin-top: 0.5em;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .profile {
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	height: 100px;
-}
-
-.profile .profile-image {
-	float: left;
+    background-color: #fff;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid #ddd; /* 薄いグレーのボーダー */
+    border-radius: 5px; /* 少し角を丸くする */
 }
 
 .profile .name h2 {
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 36px;
-	margin: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-a.profile .account {
-	font-size: 13px;
-	line-height: 22px;
+.profile .account {
+    color: #777;
+    font-size: 0.9em;
 }
 
 .profile .description {
-	font-size: 13px;
-	line-height: 22px;
-}
-
-.form-area {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #5d627b;
-    background-color: #ECECFF;
-    border-top: solid 5px #5d627b;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-}
-
-.form {
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
-}
-
-.comments {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    background: #f0f7ff;
-    border: dashed 2px #5b8bd0;
-}
-
-.message-icon {
-	border-bottom-style: ridge;
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	height: 80px;
-}
-
-.message-icon .icon {
-	margin-top: 1px;
-	margin-right: 1px;
-	margin-bottom: 1px;
-	margin-left: 1px;
-	float: left;
-}
-
-.message-icon .text {
-	height: 40px;
-}
-
-.message-icon .message {
-	margin-left: 60px;
-}
-
-.message-icon .account-name {
-	margin-top: 1px;
-	margin-bottom: 5px;
-}
-
-.message-icon .account-name .account {
-	font-weight: bold;
-}
-
-.account-name .name {
-	font-weight: lighter;
-	color: gray;
-	font: small-caption;
-}
-
-.message .date {
-	font-weight: lighter;
-	color: gray;
-	font: small-caption;
-}
-
-.copyright {
-	width: 230px;
-	margin: 0 auto;
-}
-
-label {
-	display: block;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #555;
 }
 
 .errorMessages {
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
-	color: red;
+    color: #dc3545; /* エラーメッセージの色を赤に */
+    padding: 0.5em;
+    margin: 1em;
+    border: 1px solid #f8d7da;
+    background-color: #fdecea;
+    border-radius: 5px;
 }
 
-.box {
-    padding: 0.2em 0.5em;
-    margin: 2em 2em;
-    background: #d6ebff;
-    box-shadow: 0px 0px 0px 10px #d6ebff;
-    border: dashed 2px white;
+.form-area {
+    padding: 1em;
+    margin: 1em;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.box p {
-    margin: 0;
-    padding: 0;
+.form-area textarea {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-area input[type="submit"] {
+    background-color: #007bff; /* ボタンの色（例：青） */
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.form-area input[type="submit"]:hover {
+    background-color: #0056b3; /* ホバー時のボタンの色を少し暗く */
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group textarea {
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.3em;
+    color: #777;
+    font-size: 0.8em;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 1em;
+    width: 100%; /* ボタンを親要素いっぱいに広げる */
+    box-sizing: border-box; /* paddingを含めて幅を計算 */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button.secondary {
+    background-color: #6c757d;
+    margin-top: 0.5em; /* 少し間隔を開ける */
+}
+
+.button.secondary:hover {
+    background-color: #545b62;
+}
+
+.messages {
+    margin: 1em;
+}
+
+.message {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message .account-name {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5em;
+}
+
+.message .account-name .account {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+.message .account-name .name {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.message .text {
+    white-space: pre-wrap; /* 改行を保持 */
+    margin-bottom: 0.5em;
+}
+
+.message .date {
+    color: #999;
+    font-size: 0.8em;
+}
+
+.message table {
+    margin-top: 0.5em;
+}
+
+.message table td {
+    padding-right: 0.5em;
+}
+
+.message table input[type="submit"] {
+    background-color: #28a745; /* ボタンの色（例：緑） */
+    color: white;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.message table input[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+.comments {
+    background-color: #f9f9f9;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-left: 3px solid #ccc;
+}
+
+.comment {
+    padding: 0.5em 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment .account-name {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.3em;
+}
+
+.comment .account-name .account {
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-right: 0.3em;
+}
+
+.comment .account-name .name {
+    color: #777;
+    font-size: 0.7em;
+}
+
+.comment .text {
+    white-space: pre-wrap;
+    font-size: 0.9em;
+}
+
+.comment .date {
+    color: #999;
+    font-size: 0.7em;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2em;
+    color: #777;
+    font-size: 0.8em;
 }

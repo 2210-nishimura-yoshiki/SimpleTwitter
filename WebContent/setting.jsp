@@ -11,40 +11,56 @@
     </head>
     <body>
         <div class="main-contents">
+            <div class="header">
+                <a href="./">ホーム</a>
+            </div>
 
             <c:if test="${ not empty errorMessages }">
                 <div class="errorMessages">
                     <ul>
                         <c:forEach items="${errorMessages}" var="errorMessage">
-                            <li><c:out value="${errorMessage}" />
+                            <li><c:out value="${errorMessage}" /></li>
                         </c:forEach>
                     </ul>
                 </div>
             </c:if>
 
-            <form action="setting" method="post"><br />
-                <input name="id" value="${user.id}" id="id" type="hidden"/>
+            <div class="form-area">
+                <form action="setting" method="post">
+                    <input name="id" value="${user.id}" id="id" type="hidden"/>
 
-                <label for="name">名前</label>
-                <input name="name" value="${user.name}" id="name"/><br /><small>（名前はあなたの公開プロフィールに表示されます）</small><br />
+                    <div class="form-group">
+                        <label for="name">名前</label>
+                        <input type="text" name="name" value="${user.name}" id="name"/>
+                        <small>（名前はあなたの公開プロフィールに表示されます）</small>
+                    </div>
 
-                <label for="account">アカウント名</label>
-                <input name="account" value="${user.account}" /><br />
+                    <div class="form-group">
+                        <label for="account">アカウント名</label>
+                        <input type="text" name="account" value="${user.account}" id="account"/>
+                    </div>
 
-                <label for="password">パスワード</label>
-                <input name="password" type="password" id="password"/> <br />
+                    <div class="form-group">
+                        <label for="password">パスワード</label>
+                        <input type="password" name="password" id="password"/>
+                    </div>
 
-                <label for="email">メールアドレス</label>
-                <input name="email" value="${user.email}" id="email"/> <br />
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" name="email" value="${user.email}" id="email"/>
+                    </div>
 
-                <label for="description">説明</label>
-                <textarea name="description" cols="35" rows="5" id="description"><c:out value="${user.description}" /></textarea> <br />
+                    <div class="form-group">
+                        <label for="description">説明</label>
+                        <textarea name="description" cols="35" rows="5" id="description"><c:out value="${user.description}" /></textarea>
+                    </div>
 
-                <input type="submit" value="更新" /> <br />
-                <a href="./">戻る</a>
-            </form>
+                    <input type="submit" value="更新" class="button" />
+                    <a href="./" class="button secondary">戻る</a>
+                </form>
+            </div>
 
-            <div class="copyright"> Copyright(c)NishimuraYoshiki</div>
+            <div class="copyright">Copyright(c)NishimuraYoshiki</div>
         </div>
     </body>
 </html>
